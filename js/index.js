@@ -12,12 +12,21 @@ function calculateAll() {
   const singleProduct = document.querySelector('.product');
   updateSubtotal(singleProduct);
   // end of test
+  const price = singleProduct.querySelector('.price span'); // value is on price.textContent (String)
+  const quantity = singleProduct.querySelector('.quantity input'); // value is on quantity.value (String)
 
-  // ITERATION 2
-  //... your code goes here
+  const priceVal = parseFloat(price.textContent);
+  const quantityVal = parseInt(quantity.value);
+  const subtotalVal = priceVal * quantityVal;
 
+  const subtotal = singleProduct.querySelector('.subtotal span')
+  subtotal.textContent = subtotalVal;
+  
   // ITERATION 3
   //... your code goes here
+
+  return subtotalVal;
+
 }
 
 // ITERATION 4
